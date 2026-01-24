@@ -8,7 +8,7 @@ const HomePage = () => {
             <h2>About</h2>
             <p>This is the paragraph text that sits under the header. It can be as long
       as you want and will wrap naturally. his is the paragraph text that sits under the header. It can be as long
-      as you want and will wrap naturally. NEED TO DO, FIX CSS, FIX BUTTON, MAYBE HAVE WHEEL LAND SAME SPOT, AN ARROW</p>
+      as you want and will wrap naturally.</p>
           </div>
         </div>
         <div>
