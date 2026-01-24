@@ -1,0 +1,118 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 55px;
+    text-align: center;
+    font-family: cursive;
+    max-width: 100%;
+    padding-top: 3%;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: cursive;
+    margin: 0;
+}
+
+p {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0 15%;
+    padding-top: 20px;
+    max-width: 100%;
+}
+
+.aboutPic {
+    max-width: 40%;   
+    border-radius: 20px;
+    display: block;
+}
+
+.about_text {
+    width: 50%;
+}
+
+.about_text h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.about_text p {
+    margin-bottom: 0;
+}
+
+.instructions h2 {
+    padding: 0 15%;
+    padding-top: 20px;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.instructions p {
+    padding: 0 15%;
+    padding-top: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.button_list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    padding-bottom: 5%;
+    margin: 0;
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem;
+    margin: 0 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #f09b93;
+    font-family: cursive;
+}
+
+.button:hover {
+    background-color:blueviolet;
+}
+
+.bucket_list {
+    list-style: none;
+    display: flex;
+    padding: 0 10%;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.majoritySection {
+    flex: 2;
+}
+
+.smallerSection {
+    flex: 1;
+    padding-left: 10%;
+    padding-right: 20%;
+}
