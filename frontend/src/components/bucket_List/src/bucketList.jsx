@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import "./bucketList.css";
-const api_base = 'http://localhost:5000';
+const api_base = import.meta.env.VITE_API_URL || '';
 
 function BucketList() {
 	const [todos, setTodos] = useState([]);
