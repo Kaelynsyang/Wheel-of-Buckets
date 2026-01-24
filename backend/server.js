@@ -2,11 +2,24 @@ import mongoose from 'mongoose';
 import express from 'express';
 import cors from 'cors';
 import 'dotenv/config';
+import dotenv from 'dotenv';
+import path from 'path';
+
+dotenv.config();
 
 const bucketList = express();
+const PORT = process.env.PORT || 5001;
+const __dirname=path.resolve()
 
 bucketList.use(express.json());
-bucketList.use(cors());
+if(process.env.NODE_ENV !== "production"){
+  bucketList.use(cors({
+      origin:"http://localhost:5173",
+    })
+  );
+}
+
+
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("Connected to MongoDB")).catch(console.error);
 
@@ -70,6 +83,14 @@ bucketList.put('/todo/update/:id', async (req, res) => {
 	res.json(todo);
 });
 
-bucketList.listen(5000), () => {
-	console.log('server is running on port 5000')
-};
+if(process.env.NODE_ENV === "production") {
+  bucketList.use(express.static(path.join(__dirname, "../frontend/dist")))
+
+  bucketList.get("*", (req,res) => {
+    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+  });
+}
+
+bucketList.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
