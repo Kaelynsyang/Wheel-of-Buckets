@@ -175,7 +175,7 @@ export default function SpinWheel({ initialPrizes = [] }: WheelProps) {
         {isSpinning ? "Spinning..." : "Spin the Wheel"}
       </button>
       {selectedPrize && (
-        <p className="fs-5 fw-semibold text-light">You won: {selectedPrize}!</p>
+        <p className="fs-5 fw-semibold text-dark">You won: {selectedPrize}!</p>
       )}
     </div>
   );
