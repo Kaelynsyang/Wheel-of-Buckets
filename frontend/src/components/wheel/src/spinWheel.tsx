@@ -8,7 +8,7 @@ interface Todo {
   complete: boolean;
 }
 
-const api_base: string = import.meta.env.VITE_API_URL || "";
+const api_base = "";
 
 type PrizeType =
   | "₹100"
@@ -73,7 +73,7 @@ export default function SpinWheel({ initialPrizes = [] }: WheelProps) {
   useEffect(() => {
     if (prizes.length > 0) return; // skip fetch if initial prizes exist
 
-    fetch("${api_base}/todos")
+    fetch(api_base + "/todos")
       .then((res) => res.json())
       .then((data: { text: string; complete: boolean }[]) => {
         const activePrizes = data
