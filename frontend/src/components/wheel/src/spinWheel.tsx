@@ -2,6 +2,14 @@ import { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import styled from "styled-components";
 
+interface Todo {
+  _id: string;
+  text: string;
+  complete: boolean;
+}
+
+const api_base: string = import.meta.env.VITE_API_URL || "";
+
 type PrizeType =
   | "₹100"
   | "Free Coffee"
@@ -65,7 +73,7 @@ export default function SpinWheel({ initialPrizes = [] }: WheelProps) {
   useEffect(() => {
     if (prizes.length > 0) return; // skip fetch if initial prizes exist
 
-    fetch("http://localhost:5000/todos")
+    fetch("${api_base}/todos")
       .then((res) => res.json())
       .then((data: { text: string; complete: boolean }[]) => {
         const activePrizes = data
